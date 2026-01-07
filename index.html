@@ -1,10 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Deviate Cafe</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deviate Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic reset */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #6a0dad, #2c003e);
+      overflow-x: hidden;
+      min-height: 100vh;
+      color: white;
+    }
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      color: #ffccff;
+      text-shadow: 2px 2px 10px #000;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #fff0f5;
+    }
+
+    /* Falling flowers container */
+    .flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .flower {
+      position: absolute;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background: url('https://i.postimg.cc/Y0FqK9Vd/flower.png') no-repeat center center;
+      background-size: contain;
+      animation-name: fall;
+      animation-timing-function: linear;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Main content */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    main h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ffd6ff;
+    }
+    main p {
+      font-size: 1.1em;
+      color: #f8f0ff;
+      line-height: 1.6;
+    }
+
+    /* Button */
+    .cta-button {
+      margin-top: 30px;
+      padding: 15px 35px;
+      font-size: 1.2em;
+      font-weight: bold;
+      background: #ff99ff;
+      color: #2c003e;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .cta-button:hover {
+      background: #ffccff;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9em;
+      color: #f0e6ff;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to Deviate Cafe!</h1>
-    <p>Your GitHub Pages site is live.</p>
+  <header>
+    <h1>Deviate Cafe</h1>
+    <p>Your cozy escape for coffee & inspiration</p>
+  </header>
+
+  <div class="flowers"></div>
+
+  <main>
+    <h2>Welcome to Deviate Cafe!</h2>
+    <p>Enjoy handcrafted coffee, aromatic teas, and a place to relax, work, or meet friends. Share your experience and make memories in our unique, Instagram-ready ambiance.</p>
+    <button class="cta-button">Visit Us Today</button>
+  </main>
+
+  <footer>
+    &copy; 2026 Deviate Cafe. All rights reserved.
+  </footer>
+
+  <script>
+    // Falling flowers effect
+    const flowerContainer = document.querySelector('.flowers');
+
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+      flower.style.transform = 'scale(' + (0.5 + Math.random()) + ')';
+      flowerContainer.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 10000);
+    }
+
+    setInterval(createFlower, 300); // Add a flower every 0.3 seconds
+  </script>
 </body>
 </html>
