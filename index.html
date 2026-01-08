@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DV8 Coffee | Deviate Cafe</title>
+<style>
+/* ----- General Styling ----- */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #2a0d3f; /* Dark purple background */
+    color: #fff;
+    line-height: 1.6;
+}
+a { color: #ffcc00; text-decoration: none; }
+h1, h2, h3 { color: #ffcc00; margin-bottom: 10px; }
+p { margin-bottom: 15px; }
+
+/* ----- Container ----- */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* ----- Header ----- */
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+    border-bottom: 3px solid #ffcc00;
+}
+header h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px #000;
+}
+header p {
+    font-size: 1.3em;
+}
+
+/* ----- About Section ----- */
+.about {
+    margin: 50px 0;
+    background: #3b0060;
+    padding: 30px;
+    border-radius: 15px;
+}
+.about h2 { margin-top: 0; }
+.about img { width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0; }
+
+/* ----- Menu Section ----- */
+.menu-section { margin: 50px 0; }
+.menu-category { margin-bottom: 30px; }
+.menu-category h2 {
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* ----- Gallery Section ----- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 50px 0;
+}
+.gallery img {
+    width: calc(33% - 10px);
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ----- Instagram & Contact ----- */
+.contact-section { text-align: center; margin: 50px 0; }
+.contact-section p { margin: 10px 0; font-size: 1.1em; }
+
+/* ----- Footer ----- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1f0a30;
+    border-top: 3px solid #ffcc00;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+    .gallery img { width: calc(50% - 10px); }
+}
+@media (max-width: 480px) {
+    .gallery img { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>DV8 Coffee</h1>
+    <p>Born Different. Brewed Better.</p>
+</header>
+
+<div class="container">
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>‎ديڤيت كوفي | DV8 Coffee – Our Story</h2>
+        <p>At DV8 Coffee, every cup tells a story — a story of passion, creativity, and love for Saudi Arabia. Born in the heart of this vibrant nation, DV8 Coffee was founded by <strong>Mohammed Sahil</strong> with a simple yet bold vision & own processed coffee bean 1990s to break away from the ordinary and bring joy, warmth, and memorable moments to every visitor.</p>
+        <p>Our name, DV8 (“Deviate”), reflects our mission to deviate from the usual, offering unique flavors, premium desserts, and an environment that blends modern elegance with heartfelt hospitality. From rich chocolate coffees to fluffy waffles, delicate crepes, and refreshing smoothies, every item is crafted with care to delight and inspire.</p>
+        <p>We are proud to be part of Saudi Arabia’s growing café culture. DV8 Coffee celebrates the beauty of this country — its rich traditions, dynamic communities, and the joy of connecting over a cup of coffee. Every detail, from our bold dark purple and black interior to metallic silver accents, reflects innovation, luxury, and the warmth of Saudi hospitality.</p>
+        <p>DV8 Coffee is more than a café — it is a space where families, friends, and professionals can come together, share stories, make memories, and enjoy the very best of Saudi flavors and creativity.</p>
+        <img src="images/coffee-roast1.jpg" alt="Premium Coffee Roasting">
+        <img src="images/espresso-shot.jpg" alt="Espresso Falling from Portafilter">
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h1>☕✨ Our Menu</h1>
+
+        <div class="menu-category">
+            <h2>🍞 Signature Desserts</h2>
+            <div class="menu-item"><span>French Toast | فرنش توست</span><span>22 SAR</span></div>
+            <div class="menu-item"><span>Cookies Fall | كوكيز فول</span><span>18 SAR</span></div>
+            <div class="menu-item"><span>Cookies Inject | كوكيز إنجكت</span><span>20 SAR</span></div>
+        </div>
+
+        <div class="menu-category">
+            <h2>🥞 Sweet Crêpes</h2>
+            <div class="menu-item"><span>Nutella Crêpe | كريب نوتيلا</span><span>24 SAR</span></div>
+            <div class="menu-item"><span>Kinder Crêpe | كريب كندر</span><span>26 SAR</span></div>
+            <div class="menu-item"><span>Triple Chocolate Crêpe | كريب شوكولاتة ثلاثية</span><span>26 SAR</span></div>
+            <div class="menu-item"><span>Banana Bender Crêpe | كريب موز بندر</span><span>24 SAR</span></div>
+        </div>
+
+        <div class="menu-category">
+            <h2>🍳 Breakfast Crêpes</h2>
+            <div class="menu-item"><span>Chicken Pesto Crêpe | كريب دجاج بيستو</span><span>29 SAR</span></div>
+            <div class="menu-item"><span>Quesadilla Crêpe | كريب كيساديلا</span><span>28 SAR</span></div>
+            <div class="menu-item"><span>Chicken Farmhouse Crêpe | كريب دجاج فارم هاوس</span><span>30 SAR</span></div>
+        </div>
+    </section>
+
+    <!-- Food Gallery -->
+    <section class="gallery-section">
+        <h1>📸 Our Food & Cafe</h1>
+        <div class="gallery">
+            <img src="images/cup1.jpg" alt="Coffee Cup">
+            <img src="images/cup2.jpg" alt="Coffee Cup">
+            <img src="images/interior1.jpg" alt="Cafe Interior">
+            <img src="images/dessert1.jpg" alt="Dessert">
+            <img src="images/dessert2.jpg" alt="Dessert">
+            <img src="images/interior2.jpg" alt="Cafe Interior">
+        </div>
+    </section>
+
+    <!-- Instagram & Contact -->
+    <section class="contact-section">
+        <h1>Connect with Us</h1>
+        <p>Instagram: <a href="https://www.instagram.com/deviatecafe_" target="_blank">@deviatecafe_</a></p>
+        <p>Email: <a href="mailto:deviateksa@gmail.com">deviateksa@gmail.com</a></p>
+        <p>Contact: 0595990402</p>
+        <p>We are happy to serve you anytime, anywhere. Gift us back your beautiful smile 😊</p>
+        <p>Join us at DV8 Coffee and experience a coffee journey that deviates from the ordinary, honors the spirit of our beloved country, and celebrates every moment with love, flavor, and passion.</p>
+        <p><strong>DV8 Coffee – Proudly serving Saudi Arabia, one unforgettable cup at a time.</strong></p>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 DV8 Coffee. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
