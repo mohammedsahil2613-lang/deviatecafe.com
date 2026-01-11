@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DV8 Coffee</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #3A0D5C; /* Dark Purple */
+      --secondary-bg: #1E1E1E; /* Charcoal Black */
+      --accent-color: #E64AFF; /* Electric Magenta */
+      --text-color: #F5F5F5; /* Off White */
+      --sub-accent: #5A3E36; /* Coffee Brown */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--main-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 50px;
+      background-color: var(--secondary-bg);
+    }
+
+    header img { height: 60px; }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--accent-color); }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, var(--main-bg) 0%, var(--secondary-bg) 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+
+    .hero p {
+      font-size: 24px;
+      max-width: 700px;
+      margin: auto;
+      color: var(--text-color);
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 35px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .cta-button:hover { background-color: var(--sub-accent); }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 80px 20px;
+    }
+
+    .feature-card {
+      background-color: var(--secondary-bg);
+      padding: 30px;
+      border-radius: 20px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover { transform: translateY(-10px); }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-color);
+    }
+
+    .feature-card p { color: var(--text-color); }
+
+    /* About Section */
+    .about {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .about h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      color: var(--accent-color);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .about p {
+      margin-bottom: 20px;
+      color: var(--text-color);
+      font-size: 18px;
+    }
+
+    /* Menu Section */
+    .menu {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .menu h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      color: var(--accent-color);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .menu-category {
+      margin-bottom: 50px;
+    }
+
+    .menu-category h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--accent-color);
+      padding-bottom: 5px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .menu-item span { color: var(--accent-color); }
+
+    /* Visit Us Section */
+    .visit {
+      background-color: var(--secondary-bg);
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 2px solid var(--accent-color);
+    }
+
+    .visit h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: var(--accent-color);
+    }
+
+    .visit p, .visit a {
+      font-size: 18px;
+      color: var(--text-color);
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+    }
+
+    .visit a:hover { color: var(--accent-color); }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: var(--secondary-bg);
+      margin-top: 50px;
+      border-top: 2px solid var(--accent-color);
+    }
+
+    footer p { color: var(--text-color); font-size: 16px; }
+
+    @media (max-width: 768px) {
+      .features { flex-direction: column; align-items: center; }
+      .about h2, .menu h2 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="YOUR_LOGO_URL_HERE.png" alt="DV8 Coffee Logo">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>DV8 Coffee</h1>
+    <p>Bold flavors. Iconic vibes. Your ultimate coffee lifestyle starts here.</p>
+    <a href="#visit" class="cta-button">Visit Us</a>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Premium Coffee</h3>
+      <p>Roasted fresh, ethically sourced, and served with love.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Instagram-Worthy</h3>
+      <p>Our cafe is designed for the ultimate social media moments.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Experience DV8</h3>
+      <p>Not just coffee — a lifestyle you’ll want to revisit every day.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>DV8 Coffee – Our Story</h2>
+    <p>Born Different. Brewed Better.</p>
+    <p>At DV8 Coffee, every cup tells a story — a story of passion, creativity, and love for Saudi Arabia. Born in the heart of this vibrant nation, DV8 Coffee was founded by Mohammed Sahil with a simple yet bold vision: to break away from the ordinary and bring joy, warmth, and memorable moments to every visitor.</p>
+    <p>Our name, DV8 (“Deviate”), reflects our mission to deviate from the usual, offering unique flavors, premium desserts, and an environment that blends modern elegance with heartfelt hospitality. From rich chocolate coffees to fluffy waffles, delicate crepes, and refreshing smoothies, every item is crafted with care to delight and inspire.</p>
+    <p>We are proud to be part of Saudi Arabia’s growing café culture. DV8 Coffee celebrates the beauty of this country — its rich traditions, dynamic communities, and the joy of connecting over a cup of coffee. Every detail, from our bold dark purple and black interior to metallic silver accents, reflects innovation, luxury, and the warmth of Saudi hospitality.</p>
+    <p>DV8 Coffee is more than a café — it is a space where families, friends, and professionals can come together, share stories, make memories, and enjoy the very best of Saudi flavors and creativity.</p>
+    <p>Join us at DV8 Coffee and experience a coffee journey that deviates from the ordinary, honors the spirit of our beloved country, and celebrates every moment with love, flavor, and passion.</p>
+    <p>DV8 Coffee – Proudly serving Saudi Arabia, one unforgettable cup at a time.</p>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <h2>☕✨ MENU</h2>
+
+    <!-- Example Category -->
+    <div class="menu-category">
+      <h3>🍞 Signature Desserts | الحلويات المميزة</h3>
+      <div class="menu-item"><span>French Toast | فرنش توست</span>22 SAR</div>
+      <div class="menu-item"><span>Cookies Fall | كوكيز فول</span>18 SAR</div>
+      <div class="menu-item"><span>Cookies Inject | كوكيز إنجكت</span>20 SAR</div>
+    </div>
+
+    <div class="menu-category">
+      <h3>🥞 Sweet Crêpes | الكريب الحلو</h3>
+      <div class="menu-item"><span>Nutella Crêpe | كريب نوتيلا</span>24 SAR</div>
+      <div class="menu-item"><span>Kinder Crêpe | كريب كندر</span>26 SAR</div>
+      <div class="menu-item"><span>Triple Chocolate Crêpe | كريب شوكولاتة ثلاثية</span>26 SAR</div>
+      <div class="menu-item"><span>Banana Bender Crêpe | كريب موز بندر</span>24 SAR</div>
+      <div class="menu-item"><span>Mix Berry Delight | مكس بيري ديلايت</span>25 SAR</div>
+      <div class="menu-item"><span>Strawberry Delight | فراولة ديلايت</span>24 SAR</div>
+      <div class="menu-item"><span>Crêpe Carnival | كريب كرنفال</span>27 SAR</div>
+      <div class="menu-item"><span>Brownie Crêpe | كريب براوني</span>28 SAR</div>
+      <div class="menu-item"><span>Crêpe Explorer | كريب إكسبلورر</span>29 SAR</div>
+      <div class="menu-item"><span>Pistachio Crêpe | كريب فستق</span>30 SAR</div>
+    </div>
+
+    <!-- Breakfast Crêpes -->
+    <div class="menu-category">
+      <h3>🍳 Breakfast Crêpes | كريب الإفطار</h3>
+      <div class="menu-item"><span>Chicken Pesto Crêpe | كريب دجاج بيستو</span>29 SAR</div>
+      <div class="menu-item"><span>Quesadilla Crêpe | كريب كيساديلا</span>28 SAR</div>
+      <div class="menu-item"><span>Chicken Farmhouse Crêpe | كريب دجاج فارم هاوس</span>30 SAR</div>
+      <div class="menu-item"><span>Egg Rolled Crêpe | كريب رول البيض</span>22 SAR</div>
+    </div>
+
+    <!-- Pancakes -->
+    <div class="menu-category">
+      <h3>🥞 Pancakes | البانكيك</h3>
+      <div class="menu-item"><span>Mini Pancake | ميني بانكيك</span>20 SAR</div>
+      <div class="menu-item"><span>Strawberry Pancake | بانكيك بالفراولة</span>24 SAR</div>
+      <div class="menu-item"><span>Stuffed Chocolate Pancake | بانكيك محشو شوكولاتة</span>26 SAR</div>
+    </div>
+
+    <!-- Waffles -->
+    <div class="menu-category">
+      <h3>🧇 Waffles | الوافل</h3>
+      <div class="menu-item"><span>Triple Chocolate Waffle | وافل شوكولاتة ثلاثية</span>26 SAR</div>
+      <div class="menu-item"><span>Kinder Waffle | وافل كندر</span>28 SAR</div>
+      <div class="menu-item"><span>Waffle Sundae | وافل صنداي</span>27 SAR</div>
+      <div class="menu-item"><span>Waffle Explorer | وافل إكسبلورر</span>29 SAR</div>
+      <div class="menu-item"><span>Pistachio Waffle | وافل فستق</span>30 SAR</div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="menu-category">
+      <h3>🍰 Desserts | الحلويات</h3>
+      <div class="menu-item"><span>Saffron Cake | كيك الزعفران</span>22 SAR</div>
+      <div class="menu-item"><span>Molten Dark Chocolate | مولتن شوكولاتة داكنة</span>24 SAR</div>
+      <div class="menu-item"><span>Molten Dates | مولتن تمر</span>24 SAR</div>
+      <div class="menu-item"><span>Brownie with Ice Cream | براوني مع آيس كريم</span>25 SAR</div>
+      <div class="menu-item"><span>Cheesecake | تشيزكيك</span>23 SAR</div>
+      <div class="menu-item"><span>Mango Cup Cake | كب كيك المانجو</span>20 SAR</div>
+    </div>
+
+    <!-- Healthy Bowls -->
+    <div class="menu-category">
+      <h3>🍓 Healthy Bowls | أطباق صحية</h3>
+      <div class="menu-item"><span>Fruit Bowl | طبق فواكه</span>18 SAR</div>
+      <div class="menu-item"><span>Yogurt Bowl | طبق زبادي</span>17 SAR</div>
+    </div>
+
+    <!-- Hot Drinks -->
+    <div class="menu-category">
+      <h3>☕ Hot Drinks | المشروبات الساخنة</h3>
+      <div class="menu-item"><span>Spanish Latte | سبانيش لاتيه</span>18 SAR</div>
+      <div class="menu-item"><span>Cinnamon Latte | لاتيه بالقرفة</span>17 SAR</div>
+      <div class="menu-item"><span>Vanilla Latte | فانيلا لاتيه</span>17 SAR</div>
+      <div class="menu-item"><span>Hazelnut Latte | لاتيه بندق</span>17 SAR</div>
+      <div class="menu-item"><span>Caramel Macchiato | كراميل ماكياتو</span>18 SAR</div>
+      <div class="menu-item"><span>Flat White | فلات وايت</span>15 SAR</div>
+      <div class="menu-item"><span>Cappuccino | كابتشينو</span>15 SAR</div>
+      <div class="menu-item"><span>Americano | أمريكانو</span>14 SAR</div>
+      <div class="menu-item"><span>Espresso | إسبريسو</span>12 SAR</div>
+      <div class="menu-item"><span>Coffee of the Day | قهوة اليوم</span>13 SAR</div>
+    </div>
+
+    <!-- Saudi Coffee -->
+    <div class="menu-category">
+      <h3>🇸🇦 Saudi Coffee | القهوة السعودية</h3>
+      <div class="menu-item"><span>Dallah S-M | دلة S-M</span>20 SAR</div>
+    </div>
+
+    <!-- Cold Drinks -->
+    <div class="menu-category">
+      <h3>❄️ Cold Drinks | المشروبات الباردة</h3>
+      <div class="menu-item"><span>V60 | ڤي 60</span>18 SAR</div>
+      <div class="menu-item"><span>Iced Americano | آيس أمريكانو</span>15 SAR</div>
+      <div class="menu-item"><span>Iced Latte | آيس لاتيه</span>16 SAR</div>
+      <div class="menu-item"><span>Iced Spanish Latte | سبانيش لاتيه بارد</span>18 SAR</div>
+      <div class="menu-item"><span>Cloud Matcha | كلاود ماتشا</span>19 SAR</div>
+      <div class="menu-item"><span>Iced Matcha | ماتشا باردة</span>18 SAR</div>
+      <div class="menu-item"><span>Strawberry Matcha | ماتشا بالفراولة</span>19 SAR</div>
+      <div class="menu-item"><span>Rose Cloud Latte | روز كلاود لاتيه</span>19 SAR</div>
+      <div class="menu-item"><span>Frozen Orange | عصير برتقال مثلج</span>14 SAR</div>
+      <div class="menu-item"><span>Lemonade | ليمونادة</span>13 SAR</div>
+      <div class="menu-item"><span>Strawberry Lime | فراولة لايم</span>14 SAR</div>
+      <div class="menu-item"><span>Strawberry Smoothie | سموذي فراولة</span>17 SAR</div>
+      <div class="menu-item"><span>Mix Berries Smoothie | سموذي مكس بيري</span>18 SAR</div>
+    </div>
+
+    <!-- Mojito -->
+    <div class="menu-category">
+      <h3>🍹 Mojito
